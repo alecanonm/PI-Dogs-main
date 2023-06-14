@@ -3,9 +3,8 @@ import * as types from "./types";
 
 // Add an array (dogs) to reducer with all dogs bringed  either  from API or data base
 export const addDogs = () => {
-  const endpoint = "http://localhost:3001/dogs";
   return async (dispatch) => {
-    const response = await axios.get(endpoint);
+    const response = await axios.get("dogs");
     try {
       return dispatch({
         type: types.ADD_DOGS,
@@ -20,10 +19,9 @@ export const addDogs = () => {
 //Agrega todos los temperamentos en un array (temperaments) en el reducer
 //Add all temperaments into an array (temperaments) onto reducer
 export const addTemperament = () => {
-  const endpoint = "http://localhost:3001/temperaments";
   return async (dispatch) => {
     try {
-      const response = await axios.get(endpoint);
+      const response = await axios.get("temperaments");
       return dispatch({
         type: types.ADD_TEMPERAMENTS,
         payload: response.data,
@@ -68,10 +66,9 @@ export const dogsByWeight = (order) => {
 
 //Find all dogs that match with a name
 export const addDogsByName = (input) => {
-  const endpoint = `http://localhost:3001/dogs/name?name=${input}`;
   return async (dispatch) => {
     try {
-      const response = await axios.get(endpoint);
+      const response = await axios.get(`dogs/name?name=${input}`);
       return dispatch({
         type: types.ADD_DOGS_NAME,
         payload: response.data,
@@ -87,10 +84,9 @@ export const addDogsByName = (input) => {
 
 //Find all dogs that match with a name, this action was created on porpuse to give functionality to searchBar to be able to bring "suggestions"
 export const addDogsOnSearch = (input) => {
-  const endpoint = `http://localhost:3001/dogs/name?name=${input}`;
   return async (dispatch) => {
     try {
-      const response = await axios.get(endpoint);
+      const response = await axios.get(`dogs/name?name=${input}`);
       return dispatch({
         type: types.ADD_DOGS_ONSEARCH,
         payload: response.data,
@@ -105,8 +101,7 @@ export const addDogsOnSearch = (input) => {
 //This action allow us to create a new dog an save it into data base
 export const postDog = async (dog) => {
   try {
-    const endpoint = `http://localhost:3001/dogs`;
-    const response = await axios.post(endpoint, dog);
+    const response = await axios.post("dogs", dog);
     return response;
   } catch (err) {
     return err.response.data?.error;
@@ -115,10 +110,9 @@ export const postDog = async (dog) => {
 
 //This method only brings dogs from data base
 export const getDogsFromDB = () => {
-  const endpoint = "http://localhost:3001/dogs/db";
   return async (dispatch) => {
     try {
-      const response = await axios.get(endpoint);
+      const response = await axios.get("dogs/db");
       return dispatch({
         type: types.ADD_DOGS_DB,
         payload: response.data,

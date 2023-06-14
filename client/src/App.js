@@ -6,6 +6,9 @@ import RootLayout from "./components/Helper/RootLayout";
 import DogsDetail from "./components/Detail/DogsDetail";
 import MyDogs from "./components/Form/MyDogs";
 import Error from "./components/Error/Error";
+import axios from "axios";
+axios.defaults.baseURL = "http://localhost:3001/";
+
 const root = createBrowserRouter([
   {
     path: "/",
