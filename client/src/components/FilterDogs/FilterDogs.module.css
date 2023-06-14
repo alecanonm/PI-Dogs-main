@@ -1,0 +1,24 @@
+.filterDogs {
+  padding: 0 0 30px 0;
+}
+
+.filterDogs option {
+  background: #ffc8a1;
+  color: black;
+  font-weight: 600;
+}
+
+.filterDogs select {
+  background: #f97b22;
+  padding: 5px;
+  cursor: pointer;
+  border: none;
+  margin: 2px 2px 2px 2px;
+  border-radius: 0.5em;
+  color: #000000;
+  font-size: 15px;
+}
+
+.filterDogs select:hover {
+  background: #f97b22;
+}

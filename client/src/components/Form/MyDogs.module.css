@@ -1,0 +1,101 @@
+.main-container {
+  /* background-color: antiquewhite; */
+  padding: 20px;
+  display: grid;
+  justify-content: center;
+}
+
+.button:enabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.item {
+  display: flex;
+}
+
+.item div {
+  align-self: center;
+  padding: 0 20px;
+}
+
+.callToAction {
+  margin: 10px;
+  padding: 17% 20px;
+  /* background-color: rgba(0, 0, 0, 0.607);
+  width: 100%;
+  border-radius: 15px; */
+}
+
+.callToAction li {
+  list-style: none;
+}
+
+.callToAction h3 {
+  color: #e0e0e0;
+  font-size: x-large;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.errMessage {
+  color: #ff0000;
+}
+
+.createDog {
+  /* display: flex;
+  flex-direction: column; */
+  text-align: center;
+  width: 40%;
+  padding: 20px;
+  /* border-radius: 15px; */
+  background: antiquewhite;
+  /* overflow: hidden; */
+  box-shadow: 0 5px 10px 1px #000;
+}
+
+.createDog label {
+  display: block;
+  font-weight: bold;
+}
+
+.createDog input {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.temperaments {
+  max-height: 10em;
+  background-color: #16213edd;
+  overflow: auto;
+  border-radius: 15px;
+}
+
+.temperaments::-webkit-scrollbar {
+  width: 10px;
+}
+
+.temperaments::-webkit-scrollbar-thumb {
+  background-color: #888; /* Color del pulgar de la barra de desplazamiento */
+  border-radius: 5px; /* Radio del borde del pulgar */
+}
+
+@media screen and (max-width: 650px) {
+  .createDog {
+    width: 80%;
+  }
+  .callToAction {
+    padding: 20.8% 20px;
+  }
+}

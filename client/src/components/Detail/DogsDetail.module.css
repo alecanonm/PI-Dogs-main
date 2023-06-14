@@ -1,0 +1,23 @@
+.card {
+  background-color: antiquewhite;
+  padding: 20px;
+  display: grid;
+  justify-content: center;
+}
+
+.summary {
+  width: 23em;
+  /* border-radius: 15px; */
+}
+
+.summary div {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+}
+
+.summary img {
+  padding: 10px;
+  width: 100%;
+  border-radius: 20px;
+}

@@ -1,0 +1,14 @@
+.footer {
+  padding-bottom: 2%;
+  background: #16213e;
+  font-size: small;
+}
+
+.social img {
+  width: 3%;
+  margin: 2% 1% 0.5% 1%;
+}
+
+.social a {
+  cursor: pointer;
+}
