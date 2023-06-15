@@ -1,13 +1,20 @@
 import imgLogo from "../../assets/pawprint.png";
 import SearchBar from "../SearchBar/SearchBar";
 import styles from "./NavBar.module.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const NavBar = () => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    window.location.reload();
+    navigate("/home");
+  };
+
   return (
-    <nav className={styles.navbar}>
+    /* <nav> */ <div className={styles.navbar}>
       <div className={styles.dropdown}></div>
-      <img src={imgLogo} alt="" />
+      <img onClick={handleClick} src={imgLogo} alt="" />
       <div className={styles.searchBar}>
         <SearchBar />
       </div>
@@ -23,7 +30,7 @@ const NavBar = () => {
           <li>Leave</li>
         </Link>
       </ul>
-    </nav>
+    </div>
   );
 };
 

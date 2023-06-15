@@ -7,7 +7,7 @@ const RootLayout = () => {
   return (
     <>
       {pathname !== "/" && <NavBar />}
-      <main>
+      <main style={{ display: "block" }}>
         <Outlet />
       </main>
       <Footer name="Alejandro Canon" date="2023" />

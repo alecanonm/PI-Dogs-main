@@ -1,8 +1,13 @@
 .card {
   background-color: antiquewhite;
   padding: 20px;
-  display: grid;
+  /* display: grid; */
+  display: flex;
   justify-content: center;
+}
+
+.card section {
+  display: block;
 }
 
 .summary {

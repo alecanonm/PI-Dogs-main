@@ -7,6 +7,7 @@
 .navbar img {
   max-width: 5%;
   margin: 0 5% 0 1%;
+  cursor: pointer;
 }
 
 .navbar ul {

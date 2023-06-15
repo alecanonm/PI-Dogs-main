@@ -1,8 +1,11 @@
 .cardDogs {
   display: grid;
+  /* display: flex;
+  flex-wrap: wrap; */
   place-content: center;
-  grid-template-columns: repeat(auto-fill, 240px);
+  grid-template-columns: repeat(auto-fit, 240px);
   grid-gap: 20px 20px;
+  gap: 20px 10px;
   padding: 20px;
 }
 

@@ -4,13 +4,13 @@
   box-sizing: border-box;
 }
 
-footer,
+/* footer,
 section,
 main,
 header,
 nav {
   display: block;
-}
+} */
 
 .App {
   text-align: center;

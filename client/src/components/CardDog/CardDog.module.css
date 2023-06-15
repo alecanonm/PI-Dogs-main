@@ -1,5 +1,6 @@
 .cardDog {
   width: 100%;
+
   /* background: rgba(0, 0, 0, 0.338);
   display: flex;
   flex-direction: column;
@@ -20,3 +21,9 @@
   color: #000000;
   transform: scale(1.02);
 }
+
+/* @media screen and (max-width: 750px) {
+  .cardDog {
+    width: 100%;
+  }
+} */
