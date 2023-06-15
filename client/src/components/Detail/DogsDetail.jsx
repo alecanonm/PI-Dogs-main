@@ -10,7 +10,7 @@ const DogsDetail = () => {
 
   useEffect(() => {
     async function fetchDat() {
-      const response = await axios(`http://localhost:3001/dogs/${id}`);
+      const response = await axios(`dogs/${id}`);
       setDog(response.data[0]);
     }
     fetchDat();
