@@ -20,7 +20,8 @@ const DogsDetail = () => {
 
   return (
     /* <Main> */ <div className={styles.card}>
-      <section>
+      {/* <section> */}{" "}
+      <div>
         <Card className={styles.summary}>
           {dog.reference_image_id ? (
             <img
@@ -54,7 +55,7 @@ const DogsDetail = () => {
             <p>This dog can live for about till {dog.life_span || dog.age}</p>
           </div>
         </Card>
-      </section>
+      </div>
     </div>
   );
 };

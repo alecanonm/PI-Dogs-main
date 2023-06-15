@@ -7,8 +7,8 @@ const NavBar = () => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    window.location.reload();
     navigate("/home");
+    window.location.reload();
   };
 
   return (
