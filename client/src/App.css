@@ -4,6 +4,14 @@
   box-sizing: border-box;
 }
 
+footer,
+section,
+main,
+header,
+nav {
+  display: block;
+}
+
 .App {
   text-align: center;
 }
