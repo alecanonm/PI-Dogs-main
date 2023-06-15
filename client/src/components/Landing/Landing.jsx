@@ -2,7 +2,7 @@ import styles from "./Landing.module.css";
 import vidgDog from "../../assets/landing.mp4";
 import { useNavigate } from "react-router-dom";
 import Button from "../UI/Button";
-const Landing = (props) => {
+const Landing = () => {
   const navigate = useNavigate();
 
   const navigateHandler = (e) => {
