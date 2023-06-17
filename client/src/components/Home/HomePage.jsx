@@ -4,26 +4,17 @@ import CardDogs from "../CardDogs/CardDogs";
 import { connect } from "react-redux";
 import { addDogs, addTemperament } from "../../redux/actions";
 import FilterDogs from "../FilterDogs/FilterDogs";
-import Button from "../UI/Button";
 import Wrapper from "../Helper/Wrapper";
+import Pagination from "../Pagination/Pagination";
 
 const HomePage = (props) => {
   const { addDogs, dogs, addTemperament, temperaments, toFilter } = props;
   const [currentPage, setCurrentPage] = useState(0);
 
+  const totalPages = Math.ceil(dogs.length / 8);
+
   const filteredDogs = () => {
     return dogs.slice(currentPage, currentPage + 8);
-  };
-
-  const nexPage = () => {
-    window.scroll({ top: 0, behavior: "smooth" });
-    if (filteredDogs().length < 8) return;
-    setCurrentPage(currentPage + 8);
-  };
-
-  const prevPage = () => {
-    window.scroll({ top: 0, behavior: "smooth" });
-    currentPage !== 0 && setCurrentPage(currentPage - 8);
   };
 
   useEffect(() => {
@@ -38,9 +29,13 @@ const HomePage = (props) => {
         dogs={toFilter}
         temperaments={temperaments}
       />
+
       <CardDogs showDogs={filteredDogs} />
-      <Button onClick={prevPage}>Prev</Button>
-      <Button onClick={nexPage}>Next</Button>
+      <Pagination
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
+        totalPages={totalPages}
+      ></Pagination>
     </Wrapper>
   );
 };
