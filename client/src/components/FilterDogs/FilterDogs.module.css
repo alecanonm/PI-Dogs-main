@@ -1,5 +1,7 @@
 .filterDogs {
   padding: 0 0 30px 0;
+  display: flex;
+  justify-content: center;
 }
 
 .filterDogs option {
@@ -21,4 +23,10 @@
 
 .filterDogs select:hover {
   background: #f97b22;
+}
+
+@media screen and (width < 650px) {
+  .filterDogs {
+    flex-direction: column;
+  }
 }

@@ -12,8 +12,7 @@ const Landing = () => {
 
   return (
     <>
-      {/* <main> */}
-      <div className={styles.landing}>
+      <main className={styles.landing}>
         <section>
           <h1>
             DO YOU KNOW HOW MANY BREED OF DOGS
@@ -27,7 +26,7 @@ const Landing = () => {
             Find out!
           </Button>
         </section>
-      </div>
+      </main>
       <video src={vidgDog} muted autoPlay loop></video>
       <div className={styles.layer}></div>
     </>

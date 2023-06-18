@@ -12,13 +12,12 @@ const NavBar = () => {
   };
 
   return (
-    /* <nav> */ <div className={styles.navbar}>
+    <nav className={styles.navbar}>
       <div className={styles.dropdown}></div>
       <img onClick={handleClick} src={imgLogo} alt="" />
       <div className={styles.searchBar}>
         <SearchBar />
       </div>
-
       <ul>
         <a href="/home" className={styles.link}>
           <li>Home</li>
@@ -30,7 +29,7 @@ const NavBar = () => {
           <li>Leave</li>
         </Link>
       </ul>
-    </div>
+    </nav>
   );
 };
 

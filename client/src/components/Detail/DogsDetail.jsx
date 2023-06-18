@@ -19,9 +19,8 @@ const DogsDetail = () => {
   const temperament = dog.temperaments?.map((tem) => tem.name).join(", ");
 
   return (
-    /* <Main> */ <div className={styles.card}>
-      {/* <section> */}{" "}
-      <div>
+    <main className={styles.card}>
+      <section>
         <Card className={styles.summary}>
           {dog.reference_image_id ? (
             <img
@@ -55,8 +54,8 @@ const DogsDetail = () => {
             <p>This dog can live for about till {dog.life_span || dog.age}</p>
           </div>
         </Card>
-      </div>
-    </div>
+      </section>
+    </main>
   );
 };
 

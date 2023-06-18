@@ -4,14 +4,13 @@
   box-sizing: border-box;
 }
 
-/* footer,
-section,
-main,
-header,
-nav {
-  display: block;
-} */
-
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+main {
+  flex-grow: 1;
 }

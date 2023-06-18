@@ -4,9 +4,8 @@ import github from "../../assets/github.png";
 
 const Footer = (props) => {
   return (
-    /* <footer> */ <div className={styles.footer}>
-      {/* section */}{" "}
-      <div>
+    <footer className={styles.footer}>
+      <section>
         <div className={styles.social}>
           <a
             target="_blank"
@@ -26,8 +25,8 @@ const Footer = (props) => {
         <h3>
           Copyright © {props.name} - {props.date}
         </h3>
-      </div>
-    </div>
+      </section>
+    </footer>
   );
 };
 
