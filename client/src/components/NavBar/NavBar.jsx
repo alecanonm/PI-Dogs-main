@@ -19,7 +19,7 @@ const NavBar = () => {
         <SearchBar />
       </div>
       <ul>
-        <a href="/home" className={styles.link}>
+        <a href="/home" className={styles.home}>
           <li>Home</li>
         </a>
         <Link to="/mydogs" className={styles.link}>

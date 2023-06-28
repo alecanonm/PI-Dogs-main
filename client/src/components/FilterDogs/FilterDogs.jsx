@@ -5,7 +5,9 @@ import {
   dogsByTemperament,
   dogsByAlphabetical,
   dogsByWeight,
+  addDogs,
 } from "../../redux/actions";
+import Button from "../UI/Button";
 
 const FilterDogs = (props) => {
   const { dogs, temperaments, setCurrentPage } = props;
@@ -40,6 +42,10 @@ const FilterDogs = (props) => {
     setCurrentPage(0);
   };
 
+  const resetClickHandler = () => {
+    dispatch(addDogs());
+  };
+
   return (
     <div className={styles.filterDogs}>
       <select name="origin" id="" onChange={filterByOrigin}>
@@ -70,6 +76,9 @@ const FilterDogs = (props) => {
         <option value="A-z">A-z</option>
         <option value="Z-a">Z-a</option>
       </select>
+      <Button onClick={resetClickHandler} className={styles.button}>
+        Reset filters
+      </Button>
     </div>
   );
 };

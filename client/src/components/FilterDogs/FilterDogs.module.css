@@ -10,7 +10,8 @@
   font-weight: 600;
 }
 
-.filterDogs select {
+.filterDogs select,
+.button {
   background: #f97b22;
   padding: 5px;
   cursor: pointer;

@@ -29,7 +29,12 @@
   font-weight: 600;
 }
 
-.link:hover {
+.home {
+  display: none;
+}
+
+.link:hover,
+.home:hover {
   text-decoration: underline;
 }
 
@@ -45,6 +50,14 @@
 
   .navbar ul {
     flex-direction: column;
+  }
+
+  .home {
+    display: block;
+    text-decoration: none;
+    cursor: pointer;
+    color: #000;
+    font-weight: 600;
   }
 
   .searchBar {
