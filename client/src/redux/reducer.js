@@ -41,7 +41,10 @@ export default function reducer(state = initialState, { type, payload }) {
       };
     case FILTER_TEMPERAMENT:
       const filteredByTemperaments = state.toFilter.filter(
-        (dog) => dog.temperament && dog.temperament.includes(payload)
+        (dog) =>
+          (dog.temperament && dog.temperament.includes(payload)) ||
+          (dog.temperaments &&
+            dog.temperaments.filter((temp) => temp.name.includes(payload)))
       );
       return {
         ...state,

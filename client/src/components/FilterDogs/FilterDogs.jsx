@@ -31,6 +31,7 @@ const FilterDogs = (props) => {
 
   const filterByAlphabetical = (e) => {
     const value = e.target.value;
+    if (!value) return;
     dispatch(dogsByAlphabetical(value));
     setCurrentPage(0);
   };
@@ -73,6 +74,7 @@ const FilterDogs = (props) => {
         <option value="W-l">W-l</option>
       </select>
       <select name="alphabetical" id="" onChange={filterByAlphabetical}>
+        <option value="">Order</option>
         <option value="A-z">A-z</option>
         <option value="Z-a">Z-a</option>
       </select>

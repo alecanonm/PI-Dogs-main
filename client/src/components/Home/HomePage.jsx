@@ -11,10 +11,12 @@ const HomePage = (props) => {
   const { addDogs, dogs, addTemperament, temperaments, toFilter } = props;
   const [currentPage, setCurrentPage] = useState(0);
 
-  const totalPages = Math.ceil(dogs.length / 8);
+  const totalPages = Math.trunc(dogs.length / 8);
 
   const filteredDogs = () => {
-    return dogs.slice(currentPage, currentPage + 8);
+    const startIndex = currentPage * 8;
+    const endIndex = startIndex + 8;
+    return dogs.slice(startIndex, endIndex);
   };
 
   useEffect(() => {
@@ -30,7 +32,7 @@ const HomePage = (props) => {
         temperaments={temperaments}
       />
 
-      <CardDogs showDogs={filteredDogs} />
+      <CardDogs showDogs={filteredDogs()} />
       <Pagination
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}

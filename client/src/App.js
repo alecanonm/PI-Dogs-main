@@ -7,7 +7,7 @@ import DogsDetail from "./components/Detail/DogsDetail";
 import MyDogs from "./components/Form/MyDogs";
 import Error from "./components/Error/Error";
 import axios from "axios";
-axios.defaults.baseURL = "https://pi-dogs-main-production-5bb1.up.railway.app/";
+axios.defaults.baseURL = "http://localhost:3001/";
 
 const root = createBrowserRouter([
   {

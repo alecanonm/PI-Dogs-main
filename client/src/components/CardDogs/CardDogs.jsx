@@ -16,10 +16,10 @@ const CardDogs = (props) => {
     };
   }, [setIsLoading]);
 
-  if (typeof showDogs()[0] === "string")
+  if (typeof showDogs[0] === "string")
     return (
       <Wrapper className={styles.homeWithoutDogs}>
-        <h1>{showDogs()[0]}</h1>
+        <h1>{showDogs[0]}</h1>
       </Wrapper>
     );
 
@@ -30,7 +30,7 @@ const CardDogs = (props) => {
       {isLoading ? (
         <Loader />
       ) : (
-        showDogs().map((dog) => {
+        showDogs.map((dog) => {
           const temperament = dog.temperaments
             ?.map((tem) => tem.name)
             .join(", ");
