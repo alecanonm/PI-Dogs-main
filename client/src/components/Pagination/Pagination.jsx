@@ -41,16 +41,18 @@ const Pagination = ({ totalPages, currentPage, setCurrentPage }) => {
       }
     }
 
-    for (let page = startPage; page <= endPage; page++) {
-      pageNumbers.push(
-        <Button
-          key={page}
-          onClick={() => handleClick(page)}
-          className={currentPage === page ? styles.active : ""}
-        >
-          {page}
-        </Button>
-      );
+    if (totalPages > 1) {
+      for (let page = startPage; page <= endPage; page++) {
+        pageNumbers.push(
+          <Button
+            key={page}
+            onClick={() => handleClick(page)}
+            className={currentPage === page ? styles.active : ""}
+          >
+            {page}
+          </Button>
+        );
+      }
     }
 
     return pageNumbers;
@@ -58,11 +60,15 @@ const Pagination = ({ totalPages, currentPage, setCurrentPage }) => {
 
   return (
     <div>
-      <ul className="pagination">
-        <Button onClick={handlePrevious}>Prev</Button>
-        {renderPageNumbers()}
-        <Button onClick={handleNext}>Next</Button>
-      </ul>
+      {renderPageNumbers().length > 0 ? (
+        <ul className="pagination">
+          <Button onClick={handlePrevious}>Prev</Button>
+          {renderPageNumbers()}
+          <Button onClick={handleNext}>Next</Button>
+        </ul>
+      ) : (
+        <ul className="pagination">{renderPageNumbers()}</ul>
+      )}
     </div>
   );
 };
