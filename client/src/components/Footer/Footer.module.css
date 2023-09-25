@@ -1,12 +1,18 @@
 .footer {
-  padding-bottom: 2%;
-  background: #16213e;
+  padding: 16px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #fff;
+  background: #000000c4;
   font-size: small;
   display: block;
 }
 
-.footer section {
-  display: block;
+.footer > section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
 
 .social img {

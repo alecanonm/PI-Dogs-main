@@ -5,17 +5,17 @@ import NavBar from "../NavBar/NavBar";
 const RootLayout = () => {
   const { pathname } = useLocation();
   return (
-    <body>
+    <>
       <header style={{ position: "sticky", top: "0", zIndex: "50" }}>
         {pathname !== "/" && <NavBar />}
       </header>
-      <main style={{ display: "block" }}>
+      <main>
         <Outlet />
       </main>
-      <footer>
-        {pathname !== "/" && <Footer name="Alejandro Canon" date="2023" />}
+      <footer style={{ position: "sticky", bottom: "0", zIndex: "50" }}>
+        {pathname !== "/" && <Footer name="AlejandroDev" />}
       </footer>
-    </body>
+    </>
   );
 };
 

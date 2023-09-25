@@ -3,7 +3,8 @@ import SearchBar from "../SearchBar/SearchBar";
 import styles from "./NavBar.module.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
-
+import home from "../../assets/home.png";
+import dog from "../../assets/dog.png";
 const NavBar = () => {
   const [toggled, setToggled] = useState(false);
   const navigate = useNavigate();
@@ -28,7 +29,7 @@ const NavBar = () => {
           <li>My dogs</li>
         </Link>
         <Link className={styles.link} to="/">
-          <li>Leave</li>
+          <img src={home} width={30} />
         </Link>
       </ul>
       <button
@@ -39,6 +40,23 @@ const NavBar = () => {
         <span></span>
         <span></span>
       </button>
+      {toggled && (
+        <section className={styles.toggleMenu}>
+          <section>
+            <img onClick={handleClick} src={imgLogo} width={80} />
+            <Link
+              onClick={() => setToggled((prev) => !prev)}
+              className={styles.link}
+              to="/mydogs"
+            >
+              <img src={dog} width={50} />
+            </Link>
+            <Link className={styles.link} to="/">
+              <img src={home} width={50} />
+            </Link>
+          </section>
+        </section>
+      )}
     </nav>
   );
 };
