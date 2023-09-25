@@ -1,59 +1,41 @@
 .landing {
   min-height: 100vh;
-  position: relative;
-  display: block;
+  background-image: url("../../assets/wolf.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 .landing section {
   font-size: 1.4rem;
   transform: translate(0, 100%);
   display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.landing section > div {
+  background-color: #000000ba;
+  padding: 20px;
+  border-radius: 20px;
 }
 
 .landing h1 {
-  color: #fff;
+  color: #ea7b04;
 }
 
-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  overflow: hidden;
-  z-index: -1;
-}
-
-.imageDog {
-  display: none;
-}
-
-.layer {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background: rgb(0, 0, 0);
-  opacity: 0.3;
-  z-index: -1;
-}
-
-@media screen and (width <= 900px) {
-  .vidDog {
-    display: none;
+@media (width < 900px) {
+  .landing section > div {
+    transform: translate(0, -120%);
+    margin: 0 20px;
   }
 
-  .imageDog {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    object-fit: cover;
-    overflow: hidden;
-    z-index: -1;
+  .landing h1 {
+    color: #e47702;
+  }
+
+  button {
+    transform: translate(0, -300%);
   }
 }
