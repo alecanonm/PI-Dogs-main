@@ -9,9 +9,6 @@ const getTemperaments = require("../controllers/getTemperaments");
 const getDogsFromDB = require("../controllers/getDogsFromDB");
 const router = Router();
 
-// Configurar los routers
-// Ejemplo: router.use('/auth', authRouter);
-
 router.get("/dogs/name", getDosByName);
 router.get("/dogs", getDogs);
 router.get("/dogs/db", getDogsFromDB);

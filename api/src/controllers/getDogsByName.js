@@ -6,9 +6,12 @@ const getDosByName = async (req, res) => {
   try {
     const { name } = req.query;
 
-    if (name === "") return;
+    if (!name) return;
 
     const response = await getAlldogs();
+
+    if (!response) throw Error("Something went wrong!");
+
     const filtered = response.filter((dog) => {
       return dog.name.toLowerCase().includes(name.toLowerCase());
     });

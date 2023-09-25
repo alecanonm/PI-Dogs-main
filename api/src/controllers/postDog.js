@@ -3,16 +3,10 @@ const { Dog } = require("../db");
 //controller to create a new dog into data base
 const postDog = async (req, res) => {
   try {
-    const { id, name, height, weight, age, image, temperament } = req.body;
+    const { name, height, weight, age, image, temperament } = req.body;
 
-    if (
-      name === "" ||
-      height === "" ||
-      weight === "" ||
-      age === "" ||
-      temperament === ""
-    )
-      throw Error({ error: "Wow! fill all the fields" });
+    if (!name || !height || !weight || !age || !temperament)
+      throw Error({ error: "fill all the fields to continue" });
 
     const newDog = await Dog.create({
       name,
@@ -21,6 +15,8 @@ const postDog = async (req, res) => {
       age,
       image,
     });
+
+    if (!newDog) throw Error("Something went wrong");
 
     newDog.addTemperament(temperament);
 

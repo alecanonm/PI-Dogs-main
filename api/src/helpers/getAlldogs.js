@@ -7,6 +7,7 @@ const URL = `https://api.thedogapi.com/v1/breeds?api_key=${API_KEY}`;
 //this method was created to return  all dogs in each controller
 const getAlldogs = async () => {
   const response = await axios.get(URL);
+  if (!response) throw Error("Something went wrong!");
   const dbDogs = await Dog.findAll({
     include: [{ model: Temperament }],
   });

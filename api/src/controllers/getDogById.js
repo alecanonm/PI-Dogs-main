@@ -5,9 +5,9 @@ const getAlldogs = require("../helpers/getAlldogs");
 const getDogById = async (req, res) => {
   try {
     const { id } = req.params;
-    if (+id <= 0) throw Error("There aren't any dogs with that id");
+    if (Number(id) <= 0) throw Error("There are no dogs with that id");
     const dogsTotal = await getAlldogs();
-    let dogId = dogsTotal.filter((el) => el.id == id);
+    let dogId = dogsTotal.filter((dog) => dog.id == id);
     return res.status(200).json(dogId);
   } catch (err) {
     res.status(404).json({ error: err.message });

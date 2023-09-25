@@ -1,7 +1,7 @@
 const getAlldogs = require("../helpers/getAlldogs");
 
 //Controller to bring all dogs either from the API as like from  data base
-const getDogs = async (req, res) => {
+const getDogs = async (_, res) => {
   try {
     const response = await getAlldogs();
     if (!response) throw Error("Something went wrong!");
