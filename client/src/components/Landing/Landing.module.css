@@ -35,7 +35,7 @@
     color: #e47702;
   }
 
-  button {
+  .button {
     transform: translate(0, -300%);
   }
 }

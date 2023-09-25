@@ -1,6 +1,6 @@
 import { connect, useDispatch } from "react-redux";
 import styles from "./SearchBar.module.css";
-import { FaSearch } from "react-icons/fa";
+import magnifier from "../../assets/magnifier.png";
 import { addDogsByName, addDogsOnSearch } from "../../redux/actions";
 import { useState } from "react";
 
@@ -40,7 +40,7 @@ const SearchBar = (props) => {
     <div className={styles.container}>
       <div className={styles.searchBar}>
         <button onClick={onClickHandler}>
-          <FaSearch />
+          <img src={magnifier} width="20" alt="magnifier" />
         </button>
         <input
           onChange={onChangeHandler}

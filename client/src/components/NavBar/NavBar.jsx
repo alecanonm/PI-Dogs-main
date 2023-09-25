@@ -2,10 +2,11 @@ import imgLogo from "../../assets/pawprint.png";
 import SearchBar from "../SearchBar/SearchBar";
 import styles from "./NavBar.module.css";
 import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 const NavBar = () => {
+  const [toggled, setToggled] = useState(false);
   const navigate = useNavigate();
-
   const handleClick = () => {
     navigate("/home");
     window.location.reload();
@@ -13,15 +14,16 @@ const NavBar = () => {
 
   return (
     <nav className={styles.navbar}>
-      <div className={styles.dropdown}></div>
-      <img onClick={handleClick} src={imgLogo} alt="" />
-      <div className={styles.searchBar}>
-        <SearchBar />
-      </div>
+      <img
+        className={styles.logo}
+        onClick={handleClick}
+        src={imgLogo}
+        width="50"
+        height="50"
+        alt="foot dog logo "
+      />
+      <SearchBar />
       <ul>
-        <a href="/home" className={styles.home}>
-          <li>Home</li>
-        </a>
         <Link to="/mydogs" className={styles.link}>
           <li>My dogs</li>
         </Link>
@@ -29,6 +31,14 @@ const NavBar = () => {
           <li>Leave</li>
         </Link>
       </ul>
+      <button
+        onClick={() => setToggled((prevToggled) => !prevToggled)}
+        className={`${!toggled ? styles.burger : styles.active}`}
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </nav>
   );
 };

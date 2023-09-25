@@ -1,25 +1,28 @@
 .navbar {
   display: flex;
+  padding: 2px 10px;
+  justify-content: center;
+  place-items: center;
   justify-content: space-between;
-  background: #fff;
+  background: #171616;
 }
 
 .navbar img {
-  max-width: 5%;
   margin: 0 5% 0 1%;
   cursor: pointer;
+  filter: invert(100%);
 }
 
 .navbar ul {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
-  flex-grow: 1;
+  gap: 50px;
+  margin-right: 30px;
 }
 
 .navbar ul li {
   list-style: none;
+  color: #fff;
 }
 
 .link {
@@ -29,39 +32,96 @@
   font-weight: 600;
 }
 
-.home {
-  display: none;
-}
-
 .link:hover,
 .home:hover {
   text-decoration: underline;
 }
 
-.searchBar {
-  padding: 10px;
-  align-self: center;
+.burger {
+  display: flex;
+  flex-direction: column;
+  width: 3rem;
+  height: 2rem;
+  border: 0;
+  background: transparent;
+  gap: 0.65rem;
+  display: none;
 }
 
-@media screen and (max-width: 600px) {
-  .navbar img {
+.burger > span {
+  background: #fff;
+  height: 3px;
+  width: 100%;
+  border-radius: 5px;
+  transition: all left 0.5s ease-in-out;
+  transform-origin: left;
+}
+
+.burger span:nth-child(1) {
+  transform: rotate(0);
+}
+
+.burger span:nth-child(2) {
+  opacity: 1;
+}
+
+.burger span:nth-child(3) {
+  transform: rotate(0);
+}
+
+.active {
+  display: flex;
+  flex-direction: column;
+  width: 3rem;
+  height: 2rem;
+  border: 0;
+  background: transparent;
+  gap: 0.65rem;
+}
+
+.active > span {
+  background: #fff;
+  height: 3px;
+  width: 100%;
+  border-radius: 5px;
+  transition: all left 0.5s ease-in-out;
+  transform-origin: left;
+}
+
+.active span:nth-child(1) {
+  transform: rotate(45deg);
+  width: 80%;
+}
+
+.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.active span:nth-child(3) {
+  transform: rotate(-45deg);
+  width: 80%;
+}
+
+@media (max-width: 620px) {
+  .navbar ul {
     display: none;
   }
 
-  .navbar ul {
-    flex-direction: column;
+  .navbar ul li {
+    margin: 0;
+    padding: 0;
   }
 
-  .home {
-    display: block;
-    text-decoration: none;
-    cursor: pointer;
-    color: #000;
-    font-weight: 600;
+  .navbar img {
+    margin: 0;
   }
+  .burger {
+    display: flex;
+  }
+}
 
-  .searchBar {
-    padding: 10px 30px;
-    align-self: center;
+@media (max-width: 480px) {
+  .logo {
+    display: none;
   }
 }
