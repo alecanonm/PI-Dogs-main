@@ -38,7 +38,7 @@ const DogsDetail = () => {
             />
           )}
           <h1>{dog.name}</h1>
-          <div>
+          <summary>
             {dog.origin ? (
               <p>This dog is of {dog.origin} origin,</p>
             ) : (
@@ -52,7 +52,7 @@ const DogsDetail = () => {
               {dog.weight?.metric || dog.weight}kg
             </p>
             <p>This dog can live for about till {dog.life_span || dog.age}</p>
-          </div>
+          </summary>
         </Card>
       </section>
     </main>

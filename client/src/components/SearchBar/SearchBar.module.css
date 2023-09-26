@@ -33,17 +33,40 @@
 
 .searchBar input:focus {
   outline: none;
-
   background: rgb(234, 234, 234);
 }
 
+.suggestionsLst {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
 .suggestions {
-  margin-top: 5px;
+  margin-top: 2px;
   position: absolute;
-  width: 15.4em;
+  width: 19em;
   max-height: 15em;
-  background-color: #16213edd;
+  border-radius: 8px;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  background-color: #000000d6;
   overflow: auto;
+}
+
+.suggestions::-webkit-scrollbar {
+  width: 10px;
+  background-color: #f1f1f1;
+}
+
+.suggestions::-webkit-scrollbar-thumb {
+  background-color: #888;
+}
+
+.suggestions::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
 }
 
 .suggestions a {
@@ -55,17 +78,30 @@
   color: #fff;
 }
 
-.suggestions li:hover {
-  background-color: #d25a05;
+.suggestions > ul {
+  list-style: none;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  transition: all 0.3s ease;
 }
 
-.suggestions ul {
+.suggestions > ul > li {
   display: flex;
-  flex-direction: column;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.suggestions > ul > li:hover {
+  background-color: #d25a05;
 }
 
 @media (max-width: 620px) {
   .searchBar {
     width: 15.4em;
+  }
+
+  .suggestions {
+    width: 17.5em;
   }
 }

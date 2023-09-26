@@ -1,10 +1,15 @@
 .card {
-  background-color: rgb(255, 238, 215);
   padding: 20px;
-  /* display: grid; */
   display: flex;
   justify-content: center;
-  height: 100%;
+}
+
+.summary > h1 {
+  color: #ff8400;
+}
+
+summary {
+  color: #b0b0b0;
 }
 
 .card section {

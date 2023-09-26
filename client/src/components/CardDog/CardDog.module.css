@@ -1,19 +1,18 @@
-.cardDog {
-  width: 100%;
-
-  /* background: rgba(0, 0, 0, 0.338);
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  border-radius: 10px;
-  padding-bottom: 30px; */
+.cardDog > p {
+  color: #b0b0b0;
 }
 
+.cardDog > div > h3 {
+  color: #ff8400;
+}
+
+.cardDog > div > p {
+  color: #b0b0b0;
+}
 .cardDog img {
   max-width: 100%;
-  padding: 8px;
-  border-radius: 15px;
+  padding: 10px;
+  border-radius: 20px;
 }
 
 .cardDog:hover {
@@ -21,9 +20,3 @@
   color: #000000;
   transform: scale(1.02);
 }
-
-/* @media screen and (max-width: 750px) {
-  .cardDog {
-    width: 100%;
-  }
-} */

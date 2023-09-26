@@ -127,7 +127,7 @@
 }
 
 @media (max-width: 620px) {
-  .navbar ul {
+  .navbar > ul {
     display: none;
   }
 

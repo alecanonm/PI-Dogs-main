@@ -21,7 +21,7 @@ const NavBar = () => {
         src={imgLogo}
         width="50"
         height="50"
-        alt="foot dog logo "
+        alt="foot dog logo"
       />
       <SearchBar />
       <ul>
@@ -29,7 +29,7 @@ const NavBar = () => {
           <li>My dogs</li>
         </Link>
         <Link className={styles.link} to="/">
-          <img src={home} width={30} />
+          <img src={home} width={30} height={30} alt="home" />
         </Link>
       </ul>
       <button
@@ -43,16 +43,22 @@ const NavBar = () => {
       {toggled && (
         <section className={styles.toggleMenu}>
           <section>
-            <img onClick={handleClick} src={imgLogo} width={80} />
+            <img
+              onClick={handleClick}
+              alt="foot dog logo"
+              src={imgLogo}
+              width={80}
+              height={80}
+            />
             <Link
               onClick={() => setToggled((prev) => !prev)}
               className={styles.link}
               to="/mydogs"
             >
-              <img src={dog} width={50} />
+              <img src={dog} width={50} height={50} alt="dog" />
             </Link>
             <Link className={styles.link} to="/">
-              <img src={home} width={50} />
+              <img src={home} width={50} height={50} alt="home" />
             </Link>
           </section>
         </section>

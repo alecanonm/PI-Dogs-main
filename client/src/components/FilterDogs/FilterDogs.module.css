@@ -5,14 +5,14 @@
 }
 
 .filterDogs option {
-  background: #ffc8a1;
+  background: #a1a1a1;
   color: black;
   font-weight: 600;
 }
 
 .filterDogs select,
 .button {
-  background: #f97b22;
+  background: #de5f05;
   padding: 5px;
   cursor: pointer;
   border: none;

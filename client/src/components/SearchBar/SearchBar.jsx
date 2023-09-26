@@ -28,9 +28,17 @@ const SearchBar = (props) => {
         {dogsOnSearch.map(
           (dog) =>
             dog.name.includes(input) && (
-              <a href={`/detail/${dog.id}`} key={dog.id}>
-                <li>{dog.name}</li>
-              </a>
+              <li key={dog.id} className={styles.suggestionsLst}>
+                <a href={`/detail/${dog.id}`} key={dog.id}>
+                  <h4>{dog.name}</h4>
+                </a>
+                <img
+                  src={dog.image?.url}
+                  width="100"
+                  height="50"
+                  alt={dog.name}
+                />
+              </li>
             )
         )}
       </ul>

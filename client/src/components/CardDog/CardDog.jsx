@@ -18,8 +18,8 @@ const CardDog = (props) => {
           />
         ) : (
           <img
-            width={200}
-            height={200}
+            width={100}
+            height={100}
             src={dogImg}
             alt="A pictue about a breed dog"
           />
@@ -32,7 +32,6 @@ const CardDog = (props) => {
       </div>
       <h3>Dog's weight:</h3>
       <p>{props.weight} Kg</p>
-      <div></div>
     </Card>
   );
 };
