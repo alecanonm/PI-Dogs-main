@@ -3,7 +3,6 @@ import Button from "../../UI/Button";
 import React, { useState } from "react";
 import { postDog } from "../../../redux/actions";
 import Card from "../../UI/Card";
-import Wrapper from "../../Helper/Wrapper";
 import {
   ageValidation,
   heightValidation,
@@ -94,74 +93,72 @@ const CreateDog = (props) => {
   };
 
   return (
-    <Wrapper className={styles.backdrop}>
-      <Card className={styles.createDog}>
-        <form action="submit">
-          <div>
-            <label htmlFor="name">Dog's Name:</label>
-            <input
-              type="text"
-              name="name"
-              value={newDog.name}
-              onChange={onChangeHandler}
-            />
-            {err.name && <p className={styles.errMessage}>{err.name}</p>}
+    <Card className={styles.createDog}>
+      <form action="submit">
+        <div>
+          <label htmlFor="name">Dog's Name:</label>
+          <input
+            type="text"
+            name="name"
+            value={newDog.name}
+            onChange={onChangeHandler}
+          />
+          {err.name && <p className={styles.errMessage}>{err.name}</p>}
+        </div>
+        <div>
+          <label htmlFor="height">height:</label>
+          <input
+            type="text"
+            name="height"
+            value={newDog.height}
+            onChange={onChangeHandler}
+          />
+        </div>
+        {err.height && <p className={styles.errMessage}>{err.height}</p>}
+        <div>
+          <label htmlFor="weight">Weight:</label>
+          <input
+            name="weight"
+            type="text"
+            value={newDog.weight}
+            onChange={onChangeHandler}
+          />
+        </div>
+        {err.weight && <p className={styles.errMessage}>{err.weight}</p>}
+        <div>
+          <label htmlFor="age">Age:</label>
+          <input
+            type="text"
+            name="age"
+            value={newDog.age}
+            onChange={onChangeHandler}
+          />
+        </div>
+        {err.age && <p className={styles.errMessage}>{err.age}</p>}
+        <div>
+          <h3>Temperaments:</h3>
+          <div className={styles.temperaments}>
+            {temperaments.map((temp) => (
+              <React.Fragment key={temp.id}>
+                <label htmlFor={temp.name}>{temp.name}</label>
+                <input
+                  type="checkbox"
+                  name="temperaments"
+                  id={temp.id}
+                  value={temp.name}
+                  checked={selectedTemperaments.includes(temp.name)}
+                  onChange={onSelectTemp}
+                />
+              </React.Fragment>
+            ))}
           </div>
-          <div>
-            <label htmlFor="height">height:</label>
-            <input
-              type="text"
-              name="height"
-              value={newDog.height}
-              onChange={onChangeHandler}
-            />
-          </div>
-          {err.height && <p className={styles.errMessage}>{err.height}</p>}
-          <div>
-            <label htmlFor="weight">Weight:</label>
-            <input
-              name="weight"
-              type="text"
-              value={newDog.weight}
-              onChange={onChangeHandler}
-            />
-          </div>
-          {err.weight && <p className={styles.errMessage}>{err.weight}</p>}
-          <div>
-            <label htmlFor="age">Age:</label>
-            <input
-              type="text"
-              name="age"
-              value={newDog.age}
-              onChange={onChangeHandler}
-            />
-          </div>
-          {err.age && <p className={styles.errMessage}>{err.age}</p>}
-          <div>
-            <h3>Temperaments:</h3>
-            <div className={styles.temperaments}>
-              {temperaments.map((temp) => (
-                <React.Fragment key={temp.id}>
-                  <label htmlFor={temp.name}>{temp.name}</label>
-                  <input
-                    type="checkbox"
-                    name="temperaments"
-                    id={temp.id}
-                    value={temp.name}
-                    checked={selectedTemperaments.includes(temp.name)}
-                    onChange={onSelectTemp}
-                  />
-                </React.Fragment>
-              ))}
-            </div>
-          </div>
-          <Button onClick={onCreateDog} className={isEmpty && styles.button}>
-            Register
-          </Button>
-          <Button onClick={props.onHidden}>Cancel</Button>
-        </form>
-      </Card>
-    </Wrapper>
+        </div>
+        <Button onClick={onCreateDog} className={isEmpty && styles.button}>
+          Register
+        </Button>
+        <Button onClick={props.onHidden}>Cancel</Button>
+      </form>
+    </Card>
   );
 };
 
