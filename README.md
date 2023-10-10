@@ -1,5 +1,7 @@
-Dogs web page 
+# Dogs web page
 
-This is a project that i built on my own using react, express and postgress
-this project is all about dogs, where you can see their weight, age, temperaments, origin etc.
-this project has been built using an API about dogs 
+This is a project where you will be able to see all kind of dogs and its characteristics even you will be able to add your pet over there
+
+| Proyecto      | Tecnologías                              | Cambios             | Otra Vez |
+| ------------- | ---------------------------------------- | ------------------- | -------- |
+| Dogs web page | React, CSS, PostgreSQL, Node.js, Express | Usaría Tailwind CSS | ✅       |
